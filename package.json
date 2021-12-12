@@ -87,7 +87,8 @@
       "webpack-babel-multi-target-plugin": "2.5.0",
       "webpack-cli": "3.3.11",
       "webpack-dev-server": "3.11.0",
-      "webpack-merge": "4.2.2"
+      "webpack-merge": "4.2.2",
+      "construct-style-sheets-polyfill": "2.4.6"
     },
     "hash": "9a5d3183c3bbda1007c1ea38cf14ef9b7db063419ad7d2360030d1bc16f4dee5"
   },
@@ -176,6 +177,7 @@
     "webpack-babel-multi-target-plugin": "2.5.0",
     "webpack-cli": "3.3.11",
     "webpack-dev-server": "3.11.0",
-    "webpack-merge": "4.2.2"
+    "webpack-merge": "4.2.2",
+    "construct-style-sheets-polyfill": "2.4.6"
   }
 }
