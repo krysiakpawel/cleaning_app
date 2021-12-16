@@ -2,6 +2,7 @@ package com.cleaning.service;
 
 
 import com.cleaning.domain.aircraft.Aircraft;
+import com.cleaning.domain.aircraft.AircraftDto;
 import com.cleaning.domain.aircraft.dao.AircraftDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,5 +25,14 @@ public class AircraftService {
     }
 
 
+    public AircraftDto[] getLandedPlanes(){
+        return null;
 
+
+
+
+
+
+
+    }
 }

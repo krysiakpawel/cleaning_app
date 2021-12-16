@@ -1,7 +1,6 @@
 package com.cleaning.domain.aircraft;
 
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 
 @Entity
@@ -10,18 +9,17 @@ import javax.persistence.*;
 public class Aircraft {
 
     private long id;
+    private String aircraftRegistration;
     private String aircraftType;
-    private int blankets;
 
-
-    public Aircraft(String aircraftType, int blankets){
+    public Aircraft(String aircraftRegistration, String aircraftType){
+        this.aircraftRegistration = aircraftRegistration;
         this.aircraftType = aircraftType;
-        this.blankets = blankets;
     }
 
     @Id
     @GeneratedValue
-    @Column(name = "AC_ID")
+    @Column(name = "A/C_ID")
     public long getId(){
         return id;
     }
@@ -30,24 +28,21 @@ public class Aircraft {
         this.id = id;
     }
 
-    @Column(name = "AC_TYPE")
+    @Column(name = "A/C_REGISTRATION")
+    public String getAircraftRegistration(){
+        return aircraftRegistration;
+    }
+
+    public void setAircraftRegistration(String aircraftRegistration){
+        this.aircraftRegistration = aircraftRegistration;
+    }
+
+    @Column(name = "A/C_TYPE")
     public String getAircraftType(){
         return aircraftType;
     }
 
     public void setAircraftType(String aircraftType){
         this.aircraftType = aircraftType;
-    }
-//    @Column(name = "QTY_BLANKETS")
-//    public int getBlankets(){
-//        return blankets;
-//    }
-//
-//    public void setBlankets(int blankets){
-//        this.blankets = blankets;
-//    }
-
-    public String toString(){
-        return "Aircraft type: " + aircraftType + ". Blankets: " + blankets;
     }
 }
