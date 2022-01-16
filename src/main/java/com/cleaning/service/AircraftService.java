@@ -14,10 +14,8 @@ public class AircraftService {
     private AircraftDao aircraftDao;
 
     public Aircraft saveAircraft(Aircraft aircraft){
-        if (aircraft != null) {
             return aircraftDao.save(aircraft);
-        }
-        return new Aircraft();
+
     }
 
     public void deleteAircraftById(Long id){

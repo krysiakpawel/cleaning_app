@@ -22,18 +22,11 @@ public class AircraftTestSuite {
     public void testAircraftDaoSave(){
 
         //Given
-        Aircraft aircraft = new Aircraft("737", 20);
-        Aircraft aircraft1 = new Aircraft("757", 25);
+        Aircraft aircraft = new Aircraft("TF-ISO", "767-300");
         //When
         aircraftService.saveAircraft(aircraft);
-        aircraftService.saveAircraft(aircraft1);
+
 
     }
-
-
-
-
-
-
 
 }
