@@ -33,9 +33,9 @@ public class AircraftController {
         aircraftService.saveAircraft(aircraft);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "getSupplies")
-    public int getSupplies(){
-        return 5;
+    @RequestMapping(method = RequestMethod.GET, value = "getAircraft")
+    public Aircraft getAircraft(){
+        return new Aircraft();
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "deleteDatabases")
