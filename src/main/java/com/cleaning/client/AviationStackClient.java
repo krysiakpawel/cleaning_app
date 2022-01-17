@@ -2,10 +2,6 @@ package com.cleaning.client;
 
 
 import com.cleaning.domain.aircraft.AircraftDto;
-import com.cleaning.domain.aircraft.Data;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -27,28 +23,13 @@ public class AviationStackClient {
     private RestTemplate restTemplate;
 
 
-    public AircraftDto[] getData(){
-        URI uri = UriComponentsBuilder.fromHttpUrl(aviationStackEndpoint + "flights")
-                .queryParam("access_key", aviationStackKey)
-                .queryParam("arr_iata", "kef")
-                .queryParam("airline_name", "icelandair")
-                .queryParam("flight_status", "landed").build().encode().toUri();
+//    public AircraftDto[] getData() {
+//        URI uri = UriComponentsBuilder.fromHttpUrl(aviationStackEndpoint + "flights")
+//                .queryParam("access_key", aviationStackKey)
+//                .queryParam("arr_iata", "kef")
+//                .queryParam("airline_name", "icelandair")
+//                .queryParam("flight_status", "landed").build().encode().toUri();
 
-        Data data = restTemplate.getForObject(uri, Data.class);
-        return data.getAircraftDtoList();
-
-
-
-
-
-
-
+//        Data data = restTemplate.getForObject(uri, Data.class);
+//        return data.getAircraftDtoList();
     }
-
-
-
-
-
-
-
-}

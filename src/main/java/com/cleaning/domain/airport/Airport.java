@@ -1,5 +1,7 @@
 package com.cleaning.domain.airport;
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
