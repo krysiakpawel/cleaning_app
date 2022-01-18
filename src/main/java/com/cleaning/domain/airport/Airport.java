@@ -2,25 +2,24 @@ package com.cleaning.domain.airport;
 
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+
+@Entity
+@Table(name = "AIRPORT")
+@NoArgsConstructor
 public class Airport {
-
 
     private long id;
     private String IATA;
     private String city;
-    private String continent;
+    private String country;
 
-
-    public Airport(String IATA, String city, String continent){
+    public Airport(String IATA, String city, String country){
         this.IATA = IATA;
         this.city = city;
-        this.continent = continent;
+        this.country = country;
     }
-
 
     @Id
     @GeneratedValue
@@ -51,13 +50,13 @@ public class Airport {
         this.city = city;
     }
 
-    @Column(name = "CONTINENT")
-    public String getContinent(){
-        return continent;
+    @Column(name = "COUNTRY")
+    public String getCountry(){
+        return country;
     }
 
-    public void setContinent(String continent){
-        this.continent = continent;
+    public void setCountry(String country){
+        this.country = country;
     }
 
     @Override
