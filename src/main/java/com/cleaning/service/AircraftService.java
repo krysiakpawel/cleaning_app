@@ -17,18 +17,9 @@ public class AircraftService {
             return aircraftDao.save(aircraft);
     }
 
-    public void deleteAircraftById(Long id){
-        aircraftDao.deleteById(id);
-    }
-
 
     public AircraftDto[] getLandedPlanes(){
         return null;
-
-
-
-
-
 
 
     }

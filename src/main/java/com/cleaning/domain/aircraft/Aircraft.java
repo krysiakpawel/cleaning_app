@@ -2,10 +2,9 @@ package com.cleaning.domain.aircraft;
 
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"AC_REGISTRATION"})}, name = "AIRCRAFT")
+@Table(name = "AIRCRAFT")
 @NoArgsConstructor
 public class Aircraft {
 
@@ -30,7 +29,6 @@ public class Aircraft {
     }
 
     @Column(unique = true, name = "AC_REGISTRATION")
-    @NotNull
     public String getAircraftRegistration(){
         return aircraftRegistration;
     }
@@ -40,7 +38,6 @@ public class Aircraft {
     }
 
     @Column(name = "AC_TYPE")
-    @NotNull
     public String getAircraftType(){
         return aircraftType;
     }
