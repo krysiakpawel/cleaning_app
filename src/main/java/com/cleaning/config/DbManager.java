@@ -15,7 +15,7 @@ public class DbManager {
         connectionProps.put("password", "icelandair");
         conn = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/cleaning_app?serverTimezone=Europe/Warsaw" +
-                        "&allowPublicKeyRetrieval=true&useSSL=False",
+                        "&useSSL=FALSE&allowPublicKeyRetrieval=TRUE",
                 connectionProps);
     }
 
