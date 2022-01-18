@@ -2,26 +2,27 @@ package com.cleaning.domain.turnaround;
 
 import com.cleaning.domain.aircraft.Aircraft;
 import com.cleaning.domain.airport.Airport;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "TURNAROUND")
+@NoArgsConstructor
 public class Turnaround {
 
     private long id;
+    private Airport airport;
+    private Aircraft aircraft2;
     private String aircraft;
     private String arrivingAirport;
     private String departureAirport;
-    private int blankets;
-
 
     public Turnaround(Aircraft aircraft, Airport arrivingAirport, Airport departureAirport){
         this.aircraft = aircraft.getAircraftType();
         this.arrivingAirport = arrivingAirport.getCity();
         this.departureAirport = departureAirport.getCity();
     }
-
 
     @Id
     @GeneratedValue
@@ -33,7 +34,6 @@ public class Turnaround {
         this.id = id;
     }
 
-
     @Column(name = "AIRCRAFT")
     public String getAircraft(){
         return aircraft;
@@ -43,8 +43,7 @@ public class Turnaround {
         this.aircraft = aircraft;
     }
 
-
-    @Column(name = "FROM")
+    @Column(name = "ARRIVING_FROM")
     public String getArrivingAirport(){
         return arrivingAirport;
     }
@@ -53,7 +52,7 @@ public class Turnaround {
         this.arrivingAirport = arrivingAirport;
     }
 
-    @Column(name = "TO")
+    @Column(name = "DEPARTING_TO")
     public String getDepartureAirport(){
         return departureAirport;
     }
