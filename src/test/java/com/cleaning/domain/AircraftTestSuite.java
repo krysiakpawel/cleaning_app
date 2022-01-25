@@ -51,12 +51,13 @@ public class AircraftTestSuite {
     @Test
     public void testTurnaroundDaoSave(){
         //Given
-        Airport airportORD = new Airport("ORD", "Chicago", "USA");
-        Airport airportTXL = new Airport("TXL", "Berlin", "Germany");
-        Aircraft aircraft = new Aircraft("TF-ISO", "767-300");
-        Turnaround turnaround = new Turnaround(aircraft, airportTXL, airportORD );
-        //When
+        Turnaround turnaround = new Turnaround();
+        turnaround.setArrivingAirport(new Airport("ORD", "Chicago", "USA").getCity());
+        turnaround.setDepartureAirport(new Airport("WRO", "Wroclaw", "POLAND").getCity());
+        turnaround.setAircraft(new Aircraft("TF_ISX", "757-300"));
         turnaroundService.save(turnaround);
+
+
 
     }
 }

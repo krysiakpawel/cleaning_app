@@ -19,5 +19,4 @@ public interface TurnaroundDao extends CrudRepository <Turnaround, Long> {
     List<Turnaround> findAll();
 
 
-
 }

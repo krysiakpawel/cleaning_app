@@ -2,6 +2,7 @@ package com.cleaning.domain.aircraft;
 
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "AIRCRAFT")
@@ -19,12 +20,13 @@ public class Aircraft {
 
     @Id
     @GeneratedValue
-    @Column(name = "AC_ID")
+    @NotNull
+    @Column(name = "AC_ID", unique = true)
     public long getId(){
         return id;
     }
 
-    public void setId(Long id){
+    private void setId(Long id){
         this.id = id;
     }
 
@@ -33,7 +35,7 @@ public class Aircraft {
         return aircraftRegistration;
     }
 
-    public void setAircraftRegistration(String aircraftRegistration){
+    private void setAircraftRegistration(String aircraftRegistration){
         this.aircraftRegistration = aircraftRegistration;
     }
 
@@ -42,7 +44,7 @@ public class Aircraft {
         return aircraftType;
     }
 
-    public void setAircraftType(String aircraftType){
+    private void setAircraftType(String aircraftType){
         this.aircraftType = aircraftType;
     }
 }
