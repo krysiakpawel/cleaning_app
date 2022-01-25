@@ -5,6 +5,7 @@ import com.cleaning.domain.airport.Airport;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "TURNAROUND")
@@ -13,33 +14,34 @@ public class Turnaround {
 
     private long id;
     private Airport airport;
-    private Aircraft aircraft2;
-    private String aircraft;
+    private Aircraft aircraft;
     private String arrivingAirport;
     private String departureAirport;
 
     public Turnaround(Aircraft aircraft, Airport arrivingAirport, Airport departureAirport){
-        this.aircraft = aircraft.getAircraftType();
+        this.aircraft = aircraft;
         this.arrivingAirport = arrivingAirport.getCity();
         this.departureAirport = departureAirport.getCity();
     }
 
     @Id
     @GeneratedValue
-    @Column(name = "ID")
+    @NotNull
+    @Column(name = "ID", unique = true)
     public long getId(){
         return id;
     }
-    public void setId(long id){
+    private void setId(long id){
         this.id = id;
     }
 
-    @Column(name = "AIRCRAFT")
-    public String getAircraft(){
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "AIRCRAFT_ID")
+    public Aircraft getAircraft(){
         return aircraft;
     }
 
-    public void setAircraft(String aircraft){
+    public void setAircraft(Aircraft aircraft){
         this.aircraft = aircraft;
     }
 
